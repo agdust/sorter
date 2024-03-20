@@ -1,0 +1,166 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>Sorter</title>
+
+  <link
+    rel="stylesheet"
+    href="./styles.css"
+  >
+</head>
+
+<body>
+  <main>
+    <div
+      id="data-step"
+      class="step"
+    >
+      <h2>Загрузите данные</h2>
+      <p>Принимается только единичный json массив</p>
+
+      <div class="data-step__sources">
+        <div class="data-step__source">
+          <input
+            type="file"
+            id="data-input-file"
+            name="data-input-file"
+          >
+
+          <button
+            type="button"
+            class="data-step__source-button"
+            id="useFileInputButton"
+            disabled
+          >
+            Использовать файл
+          </button>
+        </div>
+
+        <div class="data-step__source">
+          <textarea
+            name="data-input-text"
+            id="data-input-text"
+            cols="30"
+            rows="10"
+          ></textarea>
+
+          <button
+            type="button"
+            class="data-step__source-button"
+            id="useTextInputButton"
+            disabled
+          >
+            Использовать текст
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="setup-step"
+      class="step hidden"
+    >
+      <h2>На сколько частей разбить данные?</h2>
+
+      <div class="setup-step__groups">
+        <div class="setup-step__group">
+          ⬅️ <input
+            type="text"
+            name="setup-group-left"
+            id="setup-group-left"
+            value="group-1"
+          >
+        </div>
+        <div class="setup-step__group">
+          ➡️ <input
+            type="text"
+            name="setup-group-right"
+            id="setup-group-right"
+            value="group-2"
+          >
+        </div>
+        <div class="setup-step__group">
+          ⬆️ <input
+            type="text"
+            name="setup-group-top"
+            id="setup-group-top"
+          >
+        </div>
+        <div class="setup-step__group">
+          ⬇️ <input
+            type="text"
+            name="setup-group-bottom"
+            id="setup-group-bottom"
+          >
+        </div>
+      </div>
+
+      Formatter (optional):
+      <input
+        type="text"
+        id="setup-step-formatter"
+        placeholder="item.field"
+      >
+
+      <button
+        type="button"
+        class="step__button"
+        id="goToSortStepButton"
+      >
+        Далее
+      </button>
+    </div>
+
+    <div
+      id="sorting-step"
+      class="step hidden"
+    >
+      <button
+        id="sort-step__button_top"
+        class="sort-step__button hidden"
+        type="button"
+      ></button>
+      <button
+        id="sort-step__button_left"
+        class="sort-step__button hidden"
+        type="button"
+        aria-keyshortcuts="left"
+      ></button>
+
+      <div
+        tabindex="0"
+        id="sort-step-value"
+      ></div>
+
+      <button
+        id="sort-step__button_right"
+        class="sort-step__button hidden"
+        type="button"
+      ></button>
+      <button
+        id="sort-step__button_bottom"
+        class="sort-step__button hidden"
+        type="button"
+      ></button>
+    </div>
+
+    <div
+      id="result-step"
+      class="step hidden"
+    >
+      Результат в консоли
+    </div>
+  </main>
+
+  <script
+    src="./script.js"
+    type="module"
+  ></script>
+</body>
+
+</html>
